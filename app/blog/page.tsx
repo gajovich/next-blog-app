@@ -22,6 +22,7 @@ const Blog = async () => {
   return (
     <>
       <h1>Blog</h1>
+      <h1>Blog</h1>
       <ol>
         {posts.map((post: any) => (
           <li key={post.id}>
