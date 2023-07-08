@@ -1,3 +1,5 @@
+'use client';
+
 import { fetchPostsSearch } from '@/services';
 import { FormEventHandler, useState } from 'react';
 
