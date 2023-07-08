@@ -1,13 +1,31 @@
-import Link from 'next/link';
+'use client';
 
-const Posts = ({ posts }: { posts: any[] }) => {
+import { usePosts } from '@/store';
+import { shallow } from 'zustand/shallow';
+import Link from 'next/link';
+import { useEffect } from 'react';
+
+const Posts = () => {
+  const [posts, getPosts, loading] = usePosts(
+    (state) => [state.posts, state.getPosts, state.loading],
+    shallow,
+  );
+
+  useEffect(() => {
+    getPosts();
+  }, [getPosts]);
+  //   getPosts();
   return (
     <ol>
-      {posts.map((post: any) => (
-        <li key={post.id}>
-          <Link href={`/blog/${post.id}`}>{post.title}</Link>
-        </li>
-      ))}
+      {loading ? (
+        <h2>Loading...</h2>
+      ) : (
+        posts.map((post: any) => (
+          <li key={post.id}>
+            <Link href={`/blog/${post.id}`}>{post.title}</Link>
+          </li>
+        ))
+      )}
     </ol>
   );
 };
