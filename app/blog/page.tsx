@@ -3,13 +3,12 @@
 import Posts from '@/components/Posts';
 import Search from '@/components/Search';
 import { fetchPosts } from '@/services';
-import { Metadata } from 'next';
-import Link from 'next/link';
+// import { Metadata } from 'next';
 import { useEffect, useState } from 'react';
 
-export const metadata: Metadata = {
-  title: 'Blog | Next App',
-};
+// export const metadata: Metadata = {
+//   title: 'Blog | Next App',
+// };
 
 const Blog = () => {
   const [posts, setPosts] = useState<any[]>([]);
