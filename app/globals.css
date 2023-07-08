@@ -17,6 +17,10 @@ a {
   text-decoration: none;
 }
 
+a:hover {
+  text-decoration: underline;
+}
+
 body {
   font-family: Roboto;
   display: flex;
@@ -31,6 +35,10 @@ main {
 h1,
 h2 {
   text-align: center;
+}
+
+a.active {
+  color: blue !important;
 }
 
 footer {
@@ -62,8 +70,4 @@ footer {
 .header__menu a {
   font-weight: 700;
   color: #fff;
-}
-
-.header__menu a:hover {
-  text-decoration: underline;
 }
