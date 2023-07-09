@@ -7,7 +7,7 @@ const Search = () => {
   const [search, setSearch] = useState('');
   const getPostsSearch = usePosts((state) => state.getPostsSearch);
 
-  const handleSubmit: FormEventHandler<HTMLFormElement> = async (e) => {
+  const handleSubmit: FormEventHandler<HTMLFormElement> = (e) => {
     e.preventDefault();
     getPostsSearch(search);
   };

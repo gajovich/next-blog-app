@@ -14,19 +14,21 @@ const Posts = () => {
   useEffect(() => {
     getPosts();
   }, [getPosts]);
-  //   getPosts();
+
   return (
-    <ol>
+    <>
       {loading ? (
         <h2>Loading...</h2>
       ) : (
-        posts.map((post: any) => (
-          <li key={post.id}>
-            <Link href={`/blog/${post.id}`}>{post.title}</Link>
-          </li>
-        ))
+        <ol>
+          {posts.map((post: any) => (
+            <li key={post.id}>
+              <Link href={`/blog/${post.id}`}>{post.title}</Link>
+            </li>
+          ))}
+        </ol>
       )}
-    </ol>
+    </>
   );
 };
 
