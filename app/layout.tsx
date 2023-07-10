@@ -1,5 +1,6 @@
 import Footer from '@/components/Footer';
 import Header from '@/components/Header';
+import Providers from '@/components/Providers';
 import { Metadata } from 'next';
 import './globals.css';
 
@@ -12,9 +13,11 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="en">
       <body>
-        <Header />
-        <main className="container">{children}</main>
-        <Footer />
+        <Providers>
+          <Header />
+          <main className="container">{children}</main>
+          <Footer />
+        </Providers>
       </body>
     </html>
   );
